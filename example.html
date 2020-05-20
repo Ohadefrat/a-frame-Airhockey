@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AR • A-Frame</title>
+  <meta name="description" content="AR • A-Frame">
+  <script src="aframe.js"></script>
+  <script src="camera.js"></script>
+  <!--
+  <script src="geolib.js"></script>
+  <script src="geolocation.js"></script>
+  -->
+  <style>   
+    html, body, div, a-scene {
+      background-color: transparent;
+    }
+    video, img {
+      width: 100%    !important;
+      max-width: 100%    !important;
+      height: auto   !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1000;
+    }
+    .coords {
+      position: absolute;
+      top: 0.1rem;
+      left: 0.1rem;
+      background-color: silver;
+      opacity: 0.5;
+      color: #fff;
+    }
+    .glow {
+      background: #527fa9;
+      box-shadow: inset 0 0 30px 15px #49628a;
+      transition: 500ms ease-in-out;
+    }
+  </style>   
+</head>
+<body>
+  <a-scene>
+ <!--
+    <a-sphere position="0 1.25 -2" radius="1.25" color="#EF2D5E"></a-sphere>
+    <a-box position="-1 0.5 0" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-box>
+    <a-cylinder position="1 0.75 -1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+    <a-plane rotation="-90 0 0" position="0 0 -2" width="4" height="4" color="#7BC8A4"></a-plane>
+    
+
+   -->
+    <a-camera position="0 26 60"></a-camera>
+    
+           
+  
+    <a-assets>
+      <a-asset-item id="ducky-obj" src="a.obj"></a-asset-item>
+      <a-asset-item id="hockeyrink" src="hockeyrink.obj"></a-asset-item>
+      <a-asset-item id="PlayerBlue" src="PlayerBlue.obj"></a-asset-item>
+    </a-assets>
+    
+    <a-obj-model
+      src="#ducky-obj"
+      position="-4.5 17.30 0"
+      scale="0.1 0.1 0.1"
+      rotation="90 0 0"
+      draggable="true"
+      material="color: orange">
+    </a-obj-model>
+
+    <a-obj-model
+    src="#hockeyrink"
+    position="0 0 0"
+    scale="0.1 0.1 0.1"
+    rotation="-90 0 0"
+    draggable="true"
+    material="color: gray">
+  </a-obj-model>
+
+  <a-obj-model
+  src="#PlayerBlue"
+  position="-4.5 19 0"
+  scale="0.007 0.007 0.007"
+  rotation="-180 0 0"
+  draggable="true"
+  material="color: blue">
+</a-obj-model>
+
+  </a-scene>
+
+  
+  <canvas id="inputCanvas" width="320" height="240" style="display:none"></canvas>
+
+
+
+  <!--
+  <video id="inputVideo" autoplay loop></video>
+  <div class="coords">
+    PLACEHOLDER
+  </div>
+  <script src="app.js"></script>
+  -->
+
+</body>
+</html>
+
